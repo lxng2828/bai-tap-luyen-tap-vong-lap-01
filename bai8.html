@@ -1,0 +1,40 @@
+<head>
+    <title>.</title>
+</head>
+
+<body>
+    <button id="start">start</button>
+    <script>
+        const btn = document.getElementById("start");
+        btn.addEventListener("click", function () {
+            let n = +prompt("so ban muon doan trong khoang lon nhat la bao nhieu");
+            function randomNumber(n) {
+                return Math.floor(Math.random() * (n + 1));
+            }
+            let count = 0;
+            let target = randomNumber(n);
+            let correctly = false;
+
+
+            while (count < 3) {
+                let i = +prompt("nhap so ban doan");
+                if (i > target) {
+                    alert("ban doan so lon hon");
+                } else if (i < target) {
+                    alert("ban doan so nho hon");
+
+                } else {
+                    alert("ban doan dung roi");
+                    let correctly = true;
+                    break;
+                }
+                count++;
+            }
+            if (correctly == false) {
+                alert("ban da het luot, so can doan la " + target)
+            }
+        });
+    </script>
+</body>
+
+</html>
